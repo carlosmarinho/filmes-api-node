@@ -18,5 +18,5 @@ model movie {
   originalTitle String
   description String?
   score Int?
-  releaseDate DateTime
+  releaseDate DateTime?
 }
