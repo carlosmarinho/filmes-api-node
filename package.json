@@ -1,0 +1,22 @@
+{
+  "name": "filmes-api-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosmarinho/filmes-api-node.git"
+  },
+  "author": "Carlos Marinho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlosmarinho/filmes-api-node/issues"
+  },
+  "homepage": "https://github.com/carlosmarinho/filmes-api-node#readme",
+  "devDependencies": {
+    "prisma": "^4.6.1"
+  }
+}
