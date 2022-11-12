@@ -4,20 +4,20 @@
     "originalTitle": "Original Title Make first unit test",
     "description": "description 1",
     "score": 50,
-    "releaseDate": "2022-11-01"
+    "releaseDate": 2022
   },
   {
     "title": "Make second unit test 2",
     "originalTitle": "Original Title Make first unit test 2 ",
     "description": "description 2",
     "score": 60,
-    "releaseDate": "2022-10-01"
+    "releaseDate": 2022
   },
   {
     "title": "Make third unit test 3",
     "originalTitle": "Original Title Make first unit test 3",
     "description": "description 2",
     "score": 70,
-    "releaseDate": "2022-09-01"
+    "releaseDate": 2021
   }
 ]
