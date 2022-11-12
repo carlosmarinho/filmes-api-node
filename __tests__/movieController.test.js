@@ -26,18 +26,18 @@ describe("MovieController.getMovies", () => {
 
   it("Should return response with status 200 and all movies", async () => {
     MovieService.findAll.mockReturnValue(movies);
-    MovieController.fetchMovies(req, res);
+    await MovieController.fetchMovies(req, res);
 
     expect(res.statusCode).toBe(200);
     expect(res._isEndCalled).toBeTruthy();
     expect(res._getJSONData()).toStrictEqual(movies);
   })
 
-  it("should handle errors in fetchMovies", () => {
+  it("should handle errors in fetchMovies", async () => {
     const errorMessage = { message: "Error finding" };
     const rejectedPromise = Promise.reject(errorMessage);
     MovieService.findAll.mockReturnValue(rejectedPromise);
-    MovieController.fetchMovies(req, res, next);
+    await MovieController.fetchMovies(req, res, next);
     expect(next).toHaveBeenCalledWith(errorMessage);
   })
 })
