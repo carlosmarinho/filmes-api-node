@@ -2,13 +2,11 @@ const Prisma = require('@prisma/client');
 const prisma = new Prisma.PrismaClient();
 
 exports.createMovie = async (movie) => {
-
   return await prisma.movie.create({
     data: {
       ...movie,
     }
   })
-
 }
 
 exports.findAll = async (params) => {

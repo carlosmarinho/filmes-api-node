@@ -23,13 +23,11 @@ exports.createMovie = async (req, res, next) => {
 }
 
 exports.fetchMovies = async (req, res, next) => {
-
-  const all = req.query.all || false;
   const limit = req.query.limit;
   const offset = req.query.offset;
 
   try {
-    const movies = await MovieService.findAll({ all, limit, offset });
+    const movies = await MovieService.findAll({ limit, offset });
     res.status(200).json(movies);
   }
   catch (err) {
