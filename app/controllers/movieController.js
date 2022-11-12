@@ -3,6 +3,7 @@ const MovieService = require('../services/movieService')
 exports.loadFilms = async (req, res, next) => {
   try {
     await MovieService.loadFilms();
+    res.status(201).json({ message: "List of films successfully imported!" })
   }
   catch (err) {
     next(err)
@@ -21,7 +22,6 @@ exports.createMovie = async (req, res, next) => {
 
 exports.fetchMovies = async (req, res, next) => {
 
-  console.log("req: ", req.params)
   const all = req.query.all || false;
   const limit = parseInt(req.query.limit) || 1;
   const offset = parseInt(req.query.offset) || 10
