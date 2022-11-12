@@ -25,8 +25,8 @@ exports.createMovie = async (req, res, next) => {
 exports.fetchMovies = async (req, res, next) => {
 
   const all = req.query.all || false;
-  const limit = parseInt(req.query.limit) || 1;
-  const offset = parseInt(req.query.offset) || 10
+  const limit = req.query.limit;
+  const offset = req.query.offset;
 
   try {
     const movies = await MovieService.findAll({ all, limit, offset });

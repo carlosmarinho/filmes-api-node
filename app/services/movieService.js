@@ -12,14 +12,8 @@ exports.createMovie = async (movie) => {
 }
 
 exports.findAll = async (params) => {
-  let movies;
-  console.log('\n\n***\n perpage: ', params.offset, params.limit, '\n***\n');
-  if (params.all)
-    movies = await prisma.movie.findMany();
-  else
-    movies = await prisma.movie.findMany({
-      skip: params.offset,
-      take: params.limit
-    });
-  return movies;
+  return await prisma.movie.findMany({
+    skip: params.offset ? parseInt(params.offset) : undefined,
+    take: params.limit ? parseInt(params.limit) : undefined
+  });
 } 
