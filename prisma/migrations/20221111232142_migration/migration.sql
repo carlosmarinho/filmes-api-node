@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE "movies" (
+CREATE TABLE "movie" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -9,5 +9,5 @@ CREATE TABLE "movies" (
     "score" INTEGER,
     "releaseDate" TIMESTAMP(3),
 
-    CONSTRAINT "movies_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "movie_pkey" PRIMARY KEY ("id")
 );

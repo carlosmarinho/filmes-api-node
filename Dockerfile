@@ -16,6 +16,7 @@ COPY .env ./
 RUN npm install
 RUN npx prisma generate
 RUN npm install -g nodemon && npm install
+RUN npm install -g --save-dev jest
 
 COPY . .
 
