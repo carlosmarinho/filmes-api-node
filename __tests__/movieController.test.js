@@ -2,7 +2,9 @@ const httpMocks = require("node-mocks-http");
 
 const MovieController = require("../app/controllers/movieController")
 const MovieService = require("../app/services/movieService")
-const movies = require("./mocks/movies.json")
+const movies = require("./mocks/movies.json");
+const newMovie = require("./mocks/newMovie.json")
+
 
 jest.mock("../app/services/movieService")
 
@@ -13,6 +15,12 @@ beforeEach(() => {
   //We are  going to use the next on the error unit test so we will use jest.fn()
   next = jest.fn();
 });
+
+describe("MovieController.createMovie", () => {
+  beforeEach(() => {
+    req.body = newMovie;
+  });
+})
 
 describe("MovieController.getMovies", () => {
   it("should have a fetchMovies function", () => {
