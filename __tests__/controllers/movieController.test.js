@@ -26,7 +26,7 @@ describe("MovieController.createMovie", () => {
 
   it("should call MoviesService.create", async () => {
     req.body = newMovie;
-    await MovieService.createMovie(req, res, next);
+    await MovieController.createMovie(req, res, next);
     // expect(MovieService.createMovie).toBeCalledWith(newMovie);
     expect(MovieService.createMovie).toBeCalled();
   });
