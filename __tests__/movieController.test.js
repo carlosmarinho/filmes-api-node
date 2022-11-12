@@ -20,6 +20,10 @@ describe("MovieController.createMovie", () => {
   beforeEach(() => {
     req.body = newMovie;
   });
+
+  it("should have a createMovie function", () => {
+    expect(typeof MovieController.createMovie).toBe("function");
+  });
 })
 
 describe("MovieController.getMovies", () => {
