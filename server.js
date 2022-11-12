@@ -13,8 +13,8 @@ app.get("/", (_req, res) => {
   res.send(`Movie api is running: ${port}`);
 });
 
-const movieRoutes = require("./app/routes/scoreRoutes");
-app.use("/api/scores", movieRoutes);
+const movieRoutes = require("./app/routes/movieRoutes");
+app.use("/api/movies", movieRoutes);
 
 
 app.listen(port, () => {
