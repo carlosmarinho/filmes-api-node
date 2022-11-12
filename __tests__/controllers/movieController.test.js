@@ -1,12 +1,12 @@
 const httpMocks = require("node-mocks-http");
 
-const MovieController = require("../app/controllers/movieController")
-const MovieService = require("../app/services/movieService")
-const movies = require("./mocks/movies.json");
-const newMovie = require("./mocks/newMovie.json")
+const MovieController = require("../../app/controllers/movieController")
+const MovieService = require("../../app/services/movieService")
+const movies = require("../mocks/movies.json");
+const newMovie = require("../mocks/newMovie.json")
 
 
-jest.mock("../app/services/movieService")
+jest.mock("../../app/services/movieService")
 
 beforeEach(() => {
   req = httpMocks.createRequest();
