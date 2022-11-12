@@ -32,4 +32,12 @@ describe("MovieController.getMovies", () => {
     expect(res._isEndCalled).toBeTruthy();
     expect(res._getJSONData()).toStrictEqual(movies);
   })
+
+  it("should handle errors in fetchMovies", () => {
+    const errorMessage = { message: "Error finding" };
+    const rejectedPromise = Promise.reject(errorMessage);
+    MovieService.findAll.mockReturnValue(rejectedPromise);
+    MovieController.fetchMovies(req, res, next);
+    expect(next).toHaveBeenCalledWith(errorMessage);
+  })
 })
