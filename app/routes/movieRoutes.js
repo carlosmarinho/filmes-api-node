@@ -5,3 +5,5 @@ const router = express.Router();
 
 router.get("/", fetchMovies);
 router.post("/", createMovie);
+
+module.exports = router;
