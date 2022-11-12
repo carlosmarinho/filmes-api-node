@@ -16,6 +16,10 @@ app.get("/", (_req, res) => {
 const movieRoutes = require("./app/routes/movieRoutes");
 app.use("/api/movies", movieRoutes);
 
+app.use((error, req, res, next) => {
+  console.log("\n\nerror: ", error);
+  res.status(500).json({ message: error.message });
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

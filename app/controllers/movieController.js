@@ -2,7 +2,7 @@ const MovieService = require('../services/movieService')
 
 exports.createMovie = async (req, res, next) => {
   try {
-    const movie = await MovieService.createMovie(req, res, next);
+    const movie = await MovieService.createMovie(req.body);
     res.status(201).json(movie);
   }
   catch (err) {
@@ -12,7 +12,7 @@ exports.createMovie = async (req, res, next) => {
 
 exports.fetchMovies = async (req, res, next) => {
   try {
-    const movies = await MovieService.findAll(req, res, next);
+    const movies = await MovieService.findAll();
     res.status(200).json(movies);
   }
   catch (err) {
