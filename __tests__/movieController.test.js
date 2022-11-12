@@ -38,6 +38,14 @@ describe("MovieController.createMovie", () => {
     expect(res.statusCode).toBe(201);
     expect(res._isEndCalled()).toBeTruthy();
   });
+
+  it("should handle errors", async () => {
+    const errorMessage = { message: "Done property missing" };
+    const rejectedPromise = Promise.reject(errorMessage);
+    MovieService.create.mockReturnValue(rejectedPromise);
+    await MovieController.createMovie(req, res, next);
+    expect(next).toBeCalledWith(errorMessage);
+  });
 })
 
 describe("MovieController.getMovies", () => {
