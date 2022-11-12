@@ -1,8 +1,10 @@
 const MovieService = require('../services/movieService')
+const { loadFilms } = require('../services/loadMovieService')
+
 
 exports.loadFilms = async (req, res, next) => {
   try {
-    await MovieService.loadFilms();
+    await loadFilms();
     res.status(201).json({ message: "List of films successfully imported!" })
   }
   catch (err) {
