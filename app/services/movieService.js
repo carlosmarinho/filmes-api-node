@@ -12,6 +12,17 @@ exports.createMovie = async (movie) => {
 exports.findAll = async (params) => {
   return await prisma.movie.findMany({
     skip: params.offset ? parseInt(params.offset) : undefined,
-    take: params.limit ? parseInt(params.limit) : undefined
+    take: params.limit ? parseInt(params.limit) : undefined,
+    orderBy: {
+      releaseDate: 'desc',
+    },
+    select: {
+      id: true,
+      title: true,
+      originalTitle: true,
+      description: true,
+      score: true,
+      releaseDate: true
+    },
   });
-} 
+}
