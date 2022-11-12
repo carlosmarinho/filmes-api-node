@@ -1,11 +1,13 @@
 const express = require('express');
+const path = require('path');
+
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (_req, res) => {
-  res.send(`Movie Api is running`);
+  res.sendFile(path.join(__dirname, '/app/views/index.html'));
 });
 
 const movieRoutes = require("./app/routes/movieRoutes");
