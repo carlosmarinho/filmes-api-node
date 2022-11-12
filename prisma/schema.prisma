@@ -10,13 +10,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model movie {
+model Movie {
   id Int @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
   title String
   originalTitle String
-  description String?
-  score Int?
-  releaseDate DateTime?
+  description String
+  score Int
+  releaseDate Int
 }
