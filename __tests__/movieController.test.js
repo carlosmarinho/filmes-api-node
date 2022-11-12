@@ -24,6 +24,20 @@ describe("MovieController.createMovie", () => {
   it("should have a createMovie function", () => {
     expect(typeof MovieController.createMovie).toBe("function");
   });
+
+  it("should call MoviesService.create", async () => {
+    req.body = newMovie;
+    await MovieService.createMovie(req, res, next);
+    // expect(MovieService.createMovie).toBeCalledWith(newMovie);
+    expect(MovieService.createMovie).toBeCalled();
+  });
+
+  it("should return 201 response code", async () => {
+    req.body = newMovie;
+    await MovieController.createMovie(req, res, next);
+    expect(res.statusCode).toBe(201);
+    expect(res._isEndCalled()).toBeTruthy();
+  });
 })
 
 describe("MovieController.getMovies", () => {
