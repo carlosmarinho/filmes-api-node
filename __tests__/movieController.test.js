@@ -42,7 +42,7 @@ describe("MovieController.createMovie", () => {
   it("should handle errors", async () => {
     const errorMessage = { message: "Done property missing" };
     const rejectedPromise = Promise.reject(errorMessage);
-    MovieService.create.mockReturnValue(rejectedPromise);
+    MovieService.createMovie.mockReturnValue(rejectedPromise);
     await MovieController.createMovie(req, res, next);
     expect(next).toBeCalledWith(errorMessage);
   });
