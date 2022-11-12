@@ -3,9 +3,6 @@ const httpMocks = require("node-mocks-http");
 const MovieService = require("../../app/services/movieService")
 // const movies = require("../mocks/movies.json");
 const newMovie = require("../mocks/newMovie.json")
-const Prisma = require('@prisma/client');
-const prisma = new Prisma.PrismaClient();
-
 
 jest.spyOn(prisma.movie, "create").mockImplementation();
 
