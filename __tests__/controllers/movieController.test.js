@@ -11,7 +11,6 @@ jest.mock("../../app/services/movieService")
 beforeEach(() => {
   req = httpMocks.createRequest();
   res = httpMocks.createResponse();
-  // next = null;
   //We are  going to use the next on the error unit test so we will use jest.fn()
   next = jest.fn();
 });
