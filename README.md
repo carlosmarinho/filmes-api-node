@@ -15,7 +15,9 @@ Run the following commands
     ```
 
  - create .env file with content below:
+    ```
     DATABASE_URL="postgresql://postgres:postgres@postgres:5432/movies?schema=public"
+    ```
 
  - Now we need to npm install to have Primsa installed to later run the migrations and the seed
     ```
