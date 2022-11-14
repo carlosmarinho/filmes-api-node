@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:alpine as base
 RUN apk update && apk add bash
 WORKDIR /app
 EXPOSE 3000
@@ -12,14 +12,11 @@ COPY prisma ./prisma/
 # COPY ENV variable
 COPY .env ./
 
+FROM base as dev
 
 RUN npm install
 RUN npx prisma generate
 RUN npm install -g nodemon && npm install
 RUN npm install -g --save-dev jest
-
 COPY . .
-
-
 CMD ["nodemon", "server.js"]
-# CMD ["npm", "run", "start:migrate"]
