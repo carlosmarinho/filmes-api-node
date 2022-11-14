@@ -6,7 +6,24 @@
   <title>Movie Api</title>
 </head>
 <body>
-  <h1>Movie API is running</h1>
-  <h2>List of APIs</h2>
+  <h1>Films API is running</h1>
+  <h2>List of Film APIs</h2>
+  <ul>
+    <li>GET <a href="http://localhost:3000/api/movies">http://localhost:3000/api/movies</a>
+      <ul>
+        <li>It fetchs a list of films and return a json list of them. If no params passed it will fetch a maximum of 100 films</li>
+        <li>Params: We can pass two params, 'limit' and 'offset'</li>
+      </ul>
+    <li>GET <a href="http://localhost:3000/api/movies/loadFilms">http://localhost:3000/api/movies/loadFilms</a>
+      <ul>
+        <li>It search for a list of films on an external api https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API (there is only 22 films registered on this external API) and store the loaded films on a local database.</li>
+        <li>If you try running the endpoint twice without cleaning the database you probably got an error, cause I added a unique constraint on title film to not duplicate films when importing.</li>
+      </ul>
+    <li>POST <a href="http://localhost:3000/api/movies">http://localhost:3000/api/movies</a>
+      <ul>
+        <li>It create a new film on the local database. </li>
+        <li><strong>@Params: </strong>{title:string, originalTitle:string, description:string, score:int, releaseDate:int}</li>
+      </ul>
+  </ul>
 </body>
 </html>
