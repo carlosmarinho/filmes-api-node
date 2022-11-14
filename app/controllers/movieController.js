@@ -23,7 +23,7 @@ exports.createMovie = async (req, res, next) => {
 }
 
 exports.fetchMovies = async (req, res, next) => {
-  const limit = req.query.limit;
+  const limit = req.query.limit || 100;
   const offset = req.query.offset;
 
   try {
