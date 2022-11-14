@@ -11,8 +11,12 @@
   <ul>
     <li>GET <a href="http://localhost:3000/api/movies">http://localhost:3000/api/movies</a>
       <ul>
-        <li>It fetchs a list of films and return a json list of them. If no params passed it will fetch a maximum of 100 films</li>
+        <li>It fetchs a list of films ordered by Release Date (year) and return a json list of them. If no params passed it will fetch a maximum of 100 films</li>
         <li>Params: We can pass two params, 'limit' and 'offset'</li>
+        <ul>
+          <li><strong>limit:</strong> Numbers of films API will fetch</li>
+          <li><strong>offset:</strong> Numbers of films to be skipped</li>
+        </ul>
       </ul>
     <li>GET <a href="http://localhost:3000/api/movies/loadFilms">http://localhost:3000/api/movies/loadFilms</a>
       <ul>

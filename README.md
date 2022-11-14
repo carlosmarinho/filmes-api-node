@@ -65,8 +65,10 @@ I create the prisma schema located in /prisma/schema.prisma, from this file pris
 ### Movies
 
   - GET http://localhost:3000/ - Show an HTML page with all endpoints available.
-  - GET http://localhost:3000/api/movies - It fetchs a list of films and return a json list of them. If no params passed it will fetch a maximum of 100 films
+  - GET http://localhost:3000/api/movies - It fetchs a list of films ordered by Release Date (year) and return a json list of them. If no params passed it will fetch a maximum of 100 films
     - Params: We can pass two params, 'limit' and 'offset'
+      - limit: Numbers of films API will fetch
+      - offset: Numbers of films to be skipped
   - GET http://localhost:3000/api/movies/loadFilms - It search for a list of films on an external api https://ghibliapi.herokuapp.com/#section/Studio-Ghibli-API (there is only 22 films registered on this external API) and store the loaded films on a local database. 
     - If you try running the endpoint twice without cleaning the database you probably got an error, cause I added a unique constraint on title film to not duplicate films when importing.
   - POST http://localhost:3000/api/movies/ {title:string, originalTitle:string, description:string, score:int, releaseDate:int} - It create a new film on the local database. 
